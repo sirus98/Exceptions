@@ -25,8 +25,11 @@ public class Main {
         }
         CompteEstalvi compteEstalvi2 = new CompteEstalvi("Cuenta2");
 
-
-
+        try {
+            compteEstalvi2.removeUser("33915718X");
+        } catch (BankAccountException e) {
+            e.printStackTrace();
+        }
 
 
         compteEstalvi.ingressar(20);

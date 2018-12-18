@@ -31,9 +31,8 @@ public class CompteEstalvi {
     public int removeUser(String dni) throws BankAccountException {
         if (llista_usuaris!= null) {
             llista_usuaris.removeIf(u -> dni.equals(u.getDNI()));
-            return llista_usuaris.size();
         }
-        else new BankAccountException(ExceptionMessage.ACCOUNT_ZERO_USER);
+        else throw new BankAccountException(ExceptionMessage.ACCOUNT_ZERO_USER);
         return llista_usuaris.size();
     }
 
